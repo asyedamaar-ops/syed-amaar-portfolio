@@ -1,1 +1,1 @@
-document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const el=document.querySelector(a.getAttribute('href'));if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'})}}));
+document.querySelectorAll('.filterbar button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filterbar button').forEach(b=>b.classList.remove('on'));btn.classList.add('on');const f=btn.dataset.filter;document.querySelectorAll('.project-card').forEach(c=>{const x=c.dataset.filter;c.style.display=(f==='ALL'||x===f)?'flex':'none'})}));
